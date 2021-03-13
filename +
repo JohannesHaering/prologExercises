@@ -1,0 +1,2 @@
+mirror(tree(leaf(X), leaf(Y)), T) :- T = tree(leaf(Y), leaf(X)).
+mirror(tree(X, Y), T) :- tree(Y, X), mirror(X, T), mirror(Y, T).
