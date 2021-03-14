@@ -2,7 +2,7 @@ member(X, [X|_]).
 member(X, [_|Y]) :- member(X, Y).
 
 a2b([], []).
-a2b([A|X],[B|Y]) :- A = a, B = b, a2b(X,Y).
+a2b([a|X],[b|Y]) :- a2b(X,Y).
 
 len([], L) :- L = 0.
 len([_|Y], suc(L)) :- len(Y, L).
@@ -28,3 +28,6 @@ trans('nine', 'neun').
 
 transList([], []).
 transList([X|Y], [Z|W]) :- trans(X, Z), transList(Y, W).
+
+twice([], []).
+twice([X|Y], [X,X|Z]) :- twice(Y,Z).
